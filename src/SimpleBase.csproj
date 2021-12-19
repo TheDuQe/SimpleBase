@@ -1,52 +1,57 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk" ToolsVersion="15.0">
-  <PropertyGroup>
-    <TargetFramework>netstandard2.1</TargetFramework>
-    <RootNamespace>SimpleBase</RootNamespace>
-    <AssemblyName>SimpleBase</AssemblyName>
-    <Copyright>Copyright 2014-2019 Sedat Kapanoglu</Copyright>
-    <Authors>Sedat Kapanoglu</Authors>
-    <Description>Base16, Base32, Base58, Base85 encoding/decoding library</Description>
-    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
-    <GenerateAssemblyInfo>true</GenerateAssemblyInfo>
-    <SignAssembly>true</SignAssembly>
-    <AssemblyOriginatorKeyFile>..\SimpleBase.snk</AssemblyOriginatorKeyFile>
-    <DelaySign>false</DelaySign>
-
-    <Version>3.1.0</Version>
-    <DocumentationFile>SimpleBase.xml</DocumentationFile>
-      <RepositoryUrl>https://github.com/ssg/SimpleBase</RepositoryUrl>
-    <PackageProjectUrl>https://github.com/ssg/SimpleBase</PackageProjectUrl>
-    <PackageLicenseExpression>Apache-2.0</PackageLicenseExpression>
-    <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
-    <PackageTags>base16 base32 base58 base85 ascii85 z85 hexadecimal bitcoin ripple filecoin flickr crockford extended hex rfc4648 z-base-32 geohash</PackageTags>
-    <PackageReleaseNotes>
-<![CDATA[
+    <PropertyGroup>
+        <TargetFrameworks>net472;netcoreapp3.1</TargetFrameworks>
+        <RootNamespace>SimpleBase</RootNamespace>
+        <AssemblyName>SimpleBase</AssemblyName>
+        <Copyright>Copyright 2014-2019 Sedat Kapanoglu</Copyright>
+        <Authors>Sedat Kapanoglu</Authors>
+        <Description>Base16, Base32, Base58, Base85 encoding/decoding library</Description>
+        <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+        <GenerateAssemblyInfo>true</GenerateAssemblyInfo>
+        <SignAssembly>true</SignAssembly>
+        <AssemblyOriginatorKeyFile>..\SimpleBase.snk</AssemblyOriginatorKeyFile>
+        <DelaySign>false</DelaySign>
+        <LangVersion>8.0</LangVersion>
+        <Version>3.1.0</Version>
+        <PackageVersion>3.0.1</PackageVersion>
+        <!--<CodeAnalysisRuleSet>../SSG.ruleset</CodeAnalysisRuleSet>-->
+        <DocumentationFile>SimpleBase.xml</DocumentationFile>
+        <RepositoryUrl>https://github.com/ssg/SimpleBase</RepositoryUrl>
+        <PackageProjectUrl>https://github.com/ssg/SimpleBase</PackageProjectUrl>
+        <PackageLicenseExpression>Apache-2.0</PackageLicenseExpression>
+        <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
+        <PackageTags>base16 base32 base58 base85 ascii85 z85 hexadecimal bitcoin ripple filecoin flickr crockford extended hex rfc4648 z-base-32 geohash</PackageTags>
+        <PackageReleaseNotes>
+            <![CDATA[
 # Improvements
 - Added FileCoin flavor to Base32 (contributed by @farukterzioglu).
 - Upgraded test and benchmark projects to .NET Core 3.1 (LTS).
-]]></PackageReleaseNotes>
-    <LangVersion>latest</LangVersion>
-    <Nullable>enable</Nullable>
-    <PlatformTarget>AnyCPU</PlatformTarget>
-  </PropertyGroup>
+]]>
+        </PackageReleaseNotes>
+        <LangVersion>latest</LangVersion>
+        <Nullable>enable</Nullable>
+        <PlatformTarget>AnyCPU</PlatformTarget>
+    </PropertyGroup>
 
-  <ItemGroup>
-    <None Remove="SimpleBase.net45.v3.ncrunchproject" />
-    <None Remove="SimpleBase.netstandard1.3.v3.ncrunchproject" />
-    <None Remove="SimpleBase.xml" />
-    <None Remove="stylecop.json" />
-  </ItemGroup>
+    <ItemGroup>
+        <None Remove="SimpleBase.net45.v3.ncrunchproject" />
+        <None Remove="SimpleBase.netstandard1.3.v3.ncrunchproject" />
+        <None Remove="SimpleBase.xml" />
+        <None Remove="stylecop.json" />
+    </ItemGroup>
 
-  <ItemGroup>
+    <!--<ItemGroup>
     <AdditionalFiles Include="stylecop.json" />
-  </ItemGroup>
+  </ItemGroup>-->
 
-  <ItemGroup>
-    <None Include="..\SimpleBase.snk" Link="SimpleBase.snk" />
-  </ItemGroup>
+    <ItemGroup>
+        <None Include="..\SimpleBase.snk" Link="SimpleBase.snk" />
+    </ItemGroup>
 
-  <ItemGroup>
-    <PackageReference Include="Microsoft.CodeAnalysis.NetAnalyzers" Version="5.0.3">
+    <ItemGroup>
+        <PackageReference Include="IndexRange" Version="1.0.0" />
+        <PackageReference Include="Microsoft.CodeAnalysis.NetAnalyzers" Version="5.0.3" />
+        <!--<PackageReference Include="Microsoft.CodeAnalysis.FxCopAnalyzers" Version="2.9.8">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
@@ -55,5 +60,8 @@
       <IncludeAssets>runtime; build; native; contentfiles; analyzers</IncludeAssets>
     </PackageReference>
     <PackageReference Include="System.Memory" Version="4.5.4" />
-  </ItemGroup>
+    </PackageReference>-->
+        <PackageReference Include="System.Memory" Version="4.5.3" />
+
+    </ItemGroup>
 </Project>

@@ -97,7 +97,7 @@ namespace SimpleBase
         /// <inheritdoc/>
         public override int GetHashCode()
         {
-            return Value.GetHashCode(StringComparison.Ordinal);
+            return Value.GetHashCode();
         }
 
         /// <summary>
